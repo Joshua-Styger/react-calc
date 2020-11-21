@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+:root{
+  --bodyColor:      #d2d8db;
+  --bodyShadow:     #a0a4ad;
+  --displayColor:   #cfecec;
+  --displayShadow:  #a4d1d0;
+}
+
+html {
+  background-color: #311f2f;
+  font-size: 16px;
+  font-smooth: always;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.calculator-frame {
+  background: transparent;
+  display: inline-block;
+  width: 390px;
+  position: relative;
+  border-radius: 5px;
+  margin: 50px auto;
+}
+
+.calculator-container {
+  background-color: var(--bodyColor);
+  position: relative;
+  padding: 32px 32px;
+  border-radius: 10px;
+  /*   border: 2px solid black; */
+}
+
+.about {
+  font-family: sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  margin: 16px;
+}
+
+.purple-text {
+  color: #e66798;
+}
+
+.lcd-display {
+  display: grid;
+  background-color: var(--displayColor);
+  text-align: right;
+  color: #223325;
+  text-shadow: 0 0 2px var(--displayShadow);
+  font-family: "Share Tech Mono", monospace;
+  padding: 6px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: inset 2px 2px 0 0 var(--displayShadow);
+  border: 3px solid #887788;
+}
+
+.formula-area {
+  min-height: 22px;
+  margin-bottom: 6px;
+}
+
+.formula {
+  font-size: 16px;
+}
+
+.logo {
+  font-family: arial;
+  font-weight: bolder;
+  font-size: 16px;
+  place-self: center start;
+}
+
+.decals {
+  margin: 0 0 16px 0;
+  display: grid;
+  height: 30px;
+  grid-template-columns: 33% 33% 33%;
+}
+
+.solar-charger {
+  --panel: rgb(87, 55, 52);
+  --backgroud: rgb(131, 113, 78);
+  background: rgb(95, 61, 58);
+  background: linear-gradient(
+    90deg,
+    var(--panel) 24%,
+    var(--backgroud) 25%,
+    var(--panel) 26%,
+    var(--panel) 49%,
+    var(--backgroud) 50%,
+    var(--panel) 51%,
+    var(--panel) 74%,
+    var(--backgroud) 75%,
+    var(--panel) 76%
+  );
+  border-radius: 5px;
+}
+
+.model {
+  font-family: sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+}
+
+.detail {
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 9px;
+  place-self: end center;
+}
+
+.entry {
+  font-size: 27px;
+  align-self: end;
+}
+
+
+.button-area {
+  margin-top: 32px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  height: 60px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: rgb(var(--buttonBackground));
+  box-shadow: 
+    1px 1px 0 0 rgb(var(--shadowColor)),
+    2px 2px 0 0 rgb(var(--shadowColor)),
+    3px 3px 0 0 rgb(var(--shadowColor));
+  transition: box-shadow 50ms linear, transform 50ms linear, background-color 50ms linear;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active, .active-button{
+  transform: translate(3px, 3px);
+  box-shadow: none;
+  background-image: linear-gradient(rgba(var(--shadowColor),0.3), rgba(var(--shadowColor),0.3));
+}
+
+
+.doubleButton {
+  grid-column: span 2;
+}
+
+.numeric-button{
+  --buttonBackground: 113,112,103;
+  --shadowColor: 90,79,88;
+}
+
+.op-button{
+  --buttonBackground: 65,64,58;
+  --shadowColor: 41,35,39;
+}
+
+.special-button{
+  --buttonBackground: 230,112,69;
+  --shadowColor: 196,73,52;
+}
